@@ -322,7 +322,6 @@ spawn-vm rebuild="0" type="qcow2" ram="6G":
       --vsock=false --pass-ssh-key=false \
       -i ./output/**/*.{{ type }}
 
-
 # Runs shell check on all Bash scripts
 lint:
     /usr/bin/find . -iname "*.sh" -type f -exec shellcheck "{}" ';'
