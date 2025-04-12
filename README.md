@@ -1,6 +1,6 @@
 # Aurora DX Corporate Edition
 
-This is a build of [Aurora](https://getaurora.dev) based on their DX (Developer Experience) image, with Microsoft Intune and Edge pre-installed.
+This is a build of [Aurora](https://getaurora.dev), with Microsoft Intune and Edge pre-installed. As it is based on the Aurora "Developer Version" image you get lots of fun shiny developer tools like VSCode, Docker, Podman Desktop and a [bunch of other nice extras](https://docs.projectbluefin.io/bluefin-dx/) that will hopefully make your life as a corporate drone slightly more bearable.
 
 I also plan on installing a patched version of OpenVPN which will works with AWS Client VPN in the near future.
 
