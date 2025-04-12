@@ -27,10 +27,15 @@ By default you will get all the same security patches as any other Fedora user, 
 
 If for some reason there is a problem with an update, you have the option to boot the previous image at boot time.
 
+## Where can I get docs/support?
+
+For general Aurora questions, the [Aurora](https://getaurora.dev) and [Bluefin docs](https://docs.projectbluefin.io/) are your best bet, as well as the [Universal Blue Discourse Forum](https://universal-blue.discourse.group) and their [Discord](https://discord.gg/WEu6BdFEtp). **However for anything specific to this image, please open a [GitHub issue here](https://github.com/cablespaghetti/aurora-corporate-edition/issues).**
+
 ## Do you support Nvidia drivers?
 
 No sorry, this is based on the standard Aurora image so has no Nvidia/MS Surface drivers or anything like that.
 
-## Where can I get docs/support?
+## Why isn't this based on RHEL that seems way more corporate to me!?
 
-For general Aurora questions, the [Aurora](https://getaurora.dev) and [Bluefin docs](https://docs.projectbluefin.io/) are your best bet, as well as the [Universal Blue Discourse Forum](https://universal-blue.discourse.group) and their [Discord](https://discord.gg/WEu6BdFEtp). **However for anything specific to this image, please open a [GitHub issue here](https://github.com/cablespaghetti/aurora-corporate-edition/issues).**
+I did initially want to build this based on top of CentOS Stream 10, which is almost RHEL. However [Intune only support RHEL 8 and 9](https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/supported-devices-browsers) at this time and it has some super old dependencies which aren't available in CentOS Stream 10, so until RHEL 10 support comes out we'll stick with a Fedora base.
+
