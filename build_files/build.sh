@@ -8,7 +8,10 @@ curl -o /etc/yum.repos.d/microsoft-edge.repo https://packages.microsoft.com/yumr
 
 # Undo the work of good open source maintainers https://github.com/ublue-os/bluefin-lts/pull/425
 # Required because the Microsoft packages are an absolute joke
-rm -rf /opt && mkdir /opt
+rm /opt && mkdir /opt && mkdir /var/opt
 dnf install -y intune-portal microsoft-edge-stable
-mv /opt/microsoft /var/opt/microsoft
+mv /opt/microsoft /usr/lib/opt/microsoft
+ln -s /usr/lib/opt/microsoft /var/opt/microsoft
+ls -l /var/opt
+ls -l /usr/lib/opt
 rm -rf /opt && ln -s /var/opt /opt
