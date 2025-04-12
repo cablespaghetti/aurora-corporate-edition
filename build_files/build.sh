@@ -10,5 +10,5 @@ curl -o /etc/yum.repos.d/microsoft-edge.repo https://packages.microsoft.com/yumr
 # Required because the Microsoft packages are an absolute joke
 rm -rf /opt && mkdir /opt
 dnf install -y intune-portal microsoft-edge-stable
-mv /opt/* /var/opt/
+mv /opt/microsoft /var/opt/microsoft
 rm -rf /opt && ln -s /var/opt /opt

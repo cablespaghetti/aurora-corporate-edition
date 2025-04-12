@@ -1,7 +1,6 @@
 export repo_organization := env("GITHUB_REPOSITORY_OWNER", "yourname")
 export image_name := env("IMAGE_NAME", "yourimage")
-export centos_version := env("CENTOS_VERSION", "stream10")
-export fedora_version := env("CENTOS_VERSION", "41")
+export fedora_version := env("FEDORA_VERSION", "41")
 export default_tag := env("DEFAULT_TAG", "latest")
 export bib_image := env("BIB_IMAGE", "quay.io/centos-bootc/bootc-image-builder:latest")
 
@@ -106,10 +105,10 @@ build $target_image=image_name $tag=default_tag $dx="0" $hwe="0" $gdx="0":
     #!/usr/bin/env bash
 
     # Get Version
-    ver="${tag}-${centos_version}.$(date +%Y%m%d)"
+    ver="${tag}-${fedora_version}.$(date +%Y%m%d)"
 
     BUILD_ARGS=()
-    BUILD_ARGS+=("--build-arg" "MAJOR_VERSION=${centos_version}")
+    BUILD_ARGS+=("--build-arg" "MAJOR_VERSION=${fedora_version}")
     BUILD_ARGS+=("--build-arg" "IMAGE_NAME=${target_image}")
     BUILD_ARGS+=("--build-arg" "IMAGE_VENDOR=${repo_organization}")
     BUILD_ARGS+=("--build-arg" "ENABLE_DX=${dx}")
@@ -188,7 +187,8 @@ _build-bib $target_image $tag $type $config: (_rootful_load_image target_image t
     set -euo pipefail
 
     args="--type ${type} "
-    args+="--use-librepo=True"
+    args+="--use-librepo=True "
+    args+="--rootfs=btrfs"
 
     if [[ $target_image == localhost/* ]]; then
         args+=" --local"
