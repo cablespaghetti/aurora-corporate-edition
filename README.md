@@ -19,6 +19,8 @@ After your machine is set up, open a terminal and run:
 rpm-ostree rebase ostree-image-signed:docker://ghcr.io/cablespaghetti/aurora-corporate-edition:latest
 ```
 
+There have been reports that after rebasing a necessary symlink is missing, causing the Microsoft apps to fail to launch. Please try running `ln -s /usr/lib/opt/microsoft /var/opt/microsoft` if this is the case for you.
+
 ## Will I still get updates and is this secure?
 
 The GitHub action that builds this image is configured to run every week on a Monday, and is based on the normal Aurora DX image, which in turn is based on Fedora Kinoite 41 (the immutable Plasma version of Fedora).

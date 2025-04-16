@@ -12,6 +12,5 @@ rm /opt && mkdir /opt && mkdir /var/opt
 dnf install -y intune-portal microsoft-edge-stable
 mv /opt/microsoft /usr/lib/opt/microsoft
 ln -s /usr/lib/opt/microsoft /var/opt/microsoft
-ls -l /var/opt
-ls -l /usr/lib/opt
+ls -l /var/opt/microsoft/
 rm -rf /opt && ln -s /var/opt /opt
