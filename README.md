@@ -21,7 +21,7 @@ rpm-ostree rebase ostree-image-signed:docker://ghcr.io/cablespaghetti/aurora-cor
 
 ## Will I still get updates and is this secure?
 
-The GitHub action that builds this image is configured to run every week on a Monday, and is based on the normal Aurora DX image, which in turn is based on Fedora Kinoite 41 (the immutable Plasma version of Fedora).
+The GitHub action that builds this image is configured to run every week on a Monday, and is based on the normal Aurora DX image, which in turn is based on Fedora Kinoite 42 (the immutable Plasma version of Fedora).
 
 By default you will get all the same security patches as any other Fedora user, installed in the background without having to lift a finger.
 

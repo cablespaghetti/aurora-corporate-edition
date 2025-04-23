@@ -5,7 +5,7 @@ COPY build_files /
 # Base Image
 # FROM ghcr.io/ublue-os/aurora-dx:lts
 # Until Microsoft release RHEL 10 packages for Intune there is just no way the CentOS 10 image is going to work :()
-FROM ghcr.io/ublue-os/aurora-dx:41
+FROM ghcr.io/ublue-os/aurora-dx:42
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
