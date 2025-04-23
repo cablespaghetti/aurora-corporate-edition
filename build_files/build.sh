@@ -17,9 +17,10 @@ rm /opt && mkdir /opt && mkdir /var/opt
 
 # Install old Fedora 41 packages for OpenJDK 11 which is presently a dependency for Intune
 mkdir -p /var/roothome/.gpg
+
 dnf install -y https://kojipkgs.fedoraproject.org//packages/copy-jdk-configs/4.1/6.fc41/noarch/copy-jdk-configs-4.1-6.fc41.noarch.rpm
-dnf install -y https://kojipkgs.fedoraproject.org//packages/java-11-openjdk/11.0.24.0.8/2.fc41/x86_64/java-11-openjdk-headless-11.0.24.0.8-2.fc41.x86_64.rpm
-dnf install -y https://kojipkgs.fedoraproject.org//packages/java-11-openjdk/11.0.24.0.8/2.fc41/x86_64/java-11-openjdk-11.0.24.0.8-2.fc41.x86_64.rpm
+dnf install -y https://fedora.mirrorservice.org/fedora/linux/updates/41/Everything/x86_64/Packages/j/$(curl https://fedora.mirrorservice.org/fedora/linux/updates/41/Everything/x86_64/Packages/j/ | grep java-11-openjdk-headless-11 | sed -E 's/.*href=\"(java.*.rpm)\".*/\1/' | sort -r | head -n 1)
+dnf install -y https://fedora.mirrorservice.org/fedora/linux/updates/41/Everything/x86_64/Packages/j/$(curl https://fedora.mirrorservice.org/fedora/linux/updates/41/Everything/x86_64/Packages/j/ | grep java-11-openjdk-11 | sed -E 's/.*href=\"(java.*.rpm)\".*/\1/' | sort -r | head -n 1)
 
 # Install Edge and Intune
 dnf install -y intune-portal microsoft-edge-stable
