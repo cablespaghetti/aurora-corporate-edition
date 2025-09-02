@@ -6,3 +6,4 @@ minsize = "20 GiB"
 name = "aurora"
 password = "aurora"
 groups = ["wheel"]
+
