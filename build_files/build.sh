@@ -41,9 +41,9 @@ L  /var/opt/microsoft  -  -  -  -  /usr/lib/opt/microsoft
 EOF
 
 # Hacks to make AWS VPN Client work
-mv /usr/bin/readlink /usr/bin/readlink.orig
-cp /ctx/awsvpnclient-readlink /usr/bin/readlink
-chmod 755 /usr/bin/readlink
+cp /usr/bin/readlink /usr/bin/readlink.orig
+cp /ctx/awsvpnclient-readlink /usr/bin/readlink.awsvpnclient
+chmod 755 /usr/bin/readlink.awsvpnclient
 mkdir -p /etc/systemd/system/awsvpnclient.service.d/
 cp /ctx/awsvpnclient-override.conf /etc/systemd/system/awsvpnclient.service.d/override.conf
 
