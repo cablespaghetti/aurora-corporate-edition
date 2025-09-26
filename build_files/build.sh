@@ -26,7 +26,7 @@ dnf install -y https://fedora.mirrorservice.org/fedora/linux/updates/41/Everythi
 dnf install -y intune-portal microsoft-edge-stable
 
 # Install AWS VPN Client
-dnf copr enable vorona/aws-rpm-packages
+dnf copr enable -y vorona/aws-rpm-packages
 dnf install -y awsvpnclient
 systemctl enable awsvpnclient
 
