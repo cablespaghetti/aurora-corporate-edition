@@ -1,8 +1,8 @@
 # Aurora DX Corporate Edition
 
-This is a build of [Aurora](https://getaurora.dev), with Microsoft Intune and Edge pre-installed. As it is based on the Aurora "Developer Version" image you get lots of fun shiny developer tools like VSCode, Docker, Podman Desktop and a [bunch of other nice extras](https://docs.projectbluefin.io/bluefin-dx/) that will hopefully make your life as a corporate drone slightly more bearable.
+This is a build of [Aurora](https://getaurora.dev), with Microsoft Intune, Edge and the AWS VPN Client pre-installed. As it is based on the Aurora "Developer Version" image you get lots of fun shiny developer tools like VSCode, Docker, Podman Desktop and a [bunch of other nice extras](https://docs.projectbluefin.io/bluefin-dx/) that will hopefully make your life as a corporate drone slightly more bearable.
 
-I also plan on installing a patched version of OpenVPN which will works with AWS Client VPN in the near future.
+Thanks to Kevin Lewis for figuring out the necessary hacks to get AWS VPN Client working (https://github.com/kll/aurora-dx-aws)!
 
 ![A screenshot of a Plasma desktop with Intune, Edge showing a page about "I love Microsoft" and a terminal with Fastfetch output](screenshot.png)
 
