@@ -25,14 +25,26 @@ dnf install -y https://fedora.mirrorservice.org/fedora/linux/updates/41/Everythi
 # Install Edge and Intune
 dnf install -y intune-portal microsoft-edge-stable
 
-# Move installed MS packages to the proper location
+# Install AWS VPN Client
+dnf copr enable vorona/aws-rpm-packages
+dnf install -y awsvpnclient
+systemctl enable awsvpnclient
+
+# Move installed packages to the proper location
 mv /opt/microsoft /usr/lib/opt/microsoft
+mv /opt/awsvpnclient /usr/lib/opt/awsvpnclient
 
 # Register path symlink
 # Thanks to p5 for the inspiration: https://github.com/rsturla/eternal-images
 cat >/usr/lib/tmpfiles.d/microsoft.conf <<EOF
 L  /var/opt/microsoft  -  -  -  -  /usr/lib/opt/microsoft
 EOF
+
+# Hacks to make AWS VPN Client work
+mv /usr/bin/readlink /usr/bin/readlink.orig
+cp /ctx/awsvpnclient-readlink /usr/bin/readlink
+chmod 755 /usr/bin/readlink
+cp /ctx/awsvpnclient-override.conf /etc/systemd/system/awsvpnclient.service.d/
 
 # Put the opt symlink back like we found it
 rm -rf /opt && ln -s /var/opt /opt

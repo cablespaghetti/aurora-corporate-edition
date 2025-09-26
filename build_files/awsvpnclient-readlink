@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if we have the -f flag and a second parameter
+if [[ $1 = -f ]] && [[ -n $2 ]]; then
+    # Check if $2 is already a full path under /opt/awsvpnclient
+    # OR if it's a relative path and we're currently in /opt/awsvpnclient
+    if [[ $2 == /opt/awsvpnclient/* ]] || ([[ $2 != /* ]] && [[ $PWD == /opt/awsvpnclient ]]); then
+        exec /usr/bin/readlink.orig "$@" | sed 's;^/usr/lib;;'
+    else
+        exec /usr/bin/readlink.orig "$@"
+    fi
+else
+    exec /usr/bin/readlink.orig "$@"
+fi
