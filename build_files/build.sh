@@ -44,6 +44,7 @@ EOF
 mv /usr/bin/readlink /usr/bin/readlink.orig
 cp /ctx/awsvpnclient-readlink /usr/bin/readlink
 chmod 755 /usr/bin/readlink
+mkdir -p /etc/systemd/system/awsvpnclient.service.d/
 cp /ctx/awsvpnclient-override.conf /etc/systemd/system/awsvpnclient.service.d/override.conf
 
 # Put the opt symlink back like we found it
